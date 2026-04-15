@@ -75,3 +75,4 @@ chainlit.md
 
 # Test reports (optional - remove if you want to track these)
 test_reports/
+.wrangler/
