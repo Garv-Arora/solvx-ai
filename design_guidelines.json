@@ -1,0 +1,89 @@
+{
+  "project_name": "SolveX AI Landing Page",
+  "domain": "AI Automation & Internal Tools Agency",
+  "theme": "dark",
+  "archetype": "Archetype 7 (Electric & Neon) merged with Archetype 4 (Swiss & High-Contrast)",
+  "emotional_tone": "Technical, Precise, Elite, Inside-Secret",
+  "design_philosophy": "E1 The Anti-AI Designer - Avoid standard SaaS bloat. We use pure terminal-inspired technical aesthetics mixed with premium architectural spacing. Focus on depth via matte black, glowing neon accents only where action is required, and brutalist structural grid lines.",
+  "colors": {
+    "background": "#0A0A0F",
+    "surface": "#12121A",
+    "surface_glass": "rgba(255, 255, 255, 0.02)",
+    "primary_accent_violet": "#6C5CE7",
+    "cta_teal_green": "#00D4AA",
+    "danger_red": "#FF6B6B",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "rgba(255, 255, 255, 0.65)",
+    "text_muted": "rgba(255, 255, 255, 0.4)",
+    "border_subtle": "rgba(255, 255, 255, 0.08)",
+    "border_highlight": "rgba(255, 255, 255, 0.15)"
+  },
+  "typography": {
+    "libraries_to_install": "google-fonts (Unbounded, JetBrains Mono)",
+    "heading_font": "'Unbounded', sans-serif",
+    "body_font": "'JetBrains Mono', monospace",
+    "rules": {
+      "h1": "text-4xl md:text-5xl lg:text-6xl tracking-tighter leading-[1.1]",
+      "h2": "text-3xl md:text-4xl tracking-tight leading-tight",
+      "h3": "text-xl md:text-2xl tracking-tight",
+      "body": "text-sm md:text-base leading-relaxed tracking-normal",
+      "overline": "text-xs tracking-[0.2em] uppercase text-text_muted font-bold",
+      "anti_pattern_banned": "Do not use Inter, Roboto, or standard sans for headings."
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "The Control Room Grid. Use strict grid lines, visible borders on containers.",
+    "padding": "Generous spacing. Cards must use p-8 to p-12. No cramped content.",
+    "border_radius": "Sharp or minimal. Use rounded-none or rounded-md (max 8px). Do not use large pill shapes except for the main CTA button.",
+    "surfaces": "Retro-Futurism/Terminal. Background #0A0A0F with 1px border-subtle. Use Glassmorphism (backdrop-blur-xl bg-white/[0.02]) only for floating elements like the Sticky Navbar."
+  },
+  "components_strategy": {
+    "icons": "Use lucide-react (stroke-width 1.5) or install @phosphor-icons/react for a more technical/duotone feel.",
+    "navbar": "Sticky at top (z-50). Starts transparent, becomes bg-[#0A0A0F]/80 backdrop-blur-xl border-b border-border_subtle on scroll. Must have Desktop links + right-aligned CTA. Hamburger for mobile.",
+    "hero": "Full viewport height. Background is deep dark gradient with abstract neon traces. Overlay text. Dual CTAs (Primary Teal, Secondary outlined).",
+    "cards": "1px border, flat background. On hover: border glows teal or violet via box-shadow, slight negative Y translation (-translate-y-1).",
+    "timeline_how_it_works": "Horizontal flex on desktop, vertical border-l on mobile. Use glowing dots for step markers.",
+    "cta_buttons": "Primary CTA MUST use Teal (#00D4AA) background, pure black text (for contrast), font-bold, hover:brightness-110, hover:shadow-[0_0_20px_rgba(0,212,170,0.4)].",
+    "forms": "Email capture must use Shadcn Input but overridden: bg-transparent, border-b-2 border-x-0 border-t-0 border-white/20 rounded-none focus:border-teal-green. Terminal style.",
+    "data_test_ids": "Mandatory on all interactive elements. E.g., data-testid='hero-cta-button', data-testid='email-submit-button'."
+  },
+  "motion_and_interactions": {
+    "libraries": "framer-motion, lucide-react",
+    "scroll_animations": "Use framer-motion 'whileInView' with 'viewport={{ once: true, margin: \"-100px\" }}'.",
+    "staggered_lists": "Problem Punch and Offer Stack items must fade/slide in sequentially.",
+    "reduced_motion": "All framer-motion animations should respect user preferences natively or via a custom hook.",
+    "hover_states": "Every card, link, and button needs a distinct hover state. Links must shift text color from muted to white."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/9404662/pexels-photo-9404662.jpeg",
+      "description": "Dynamic neon lines against a dark background, representing automation energy. Apply mix-blend-screen or opacity-20 overlay.",
+      "category": "background"
+    },
+    "demo_project_1": {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "description": "Dashboard analytics on a laptop screen.",
+      "category": "portfolio_proof"
+    },
+    "demo_project_2": {
+      "url": "https://images.unsplash.com/photo-1720135885007-454165745e21",
+      "description": "Dark UI application on mobile.",
+      "category": "portfolio_proof"
+    },
+    "systems_texture": {
+      "url": "https://images.unsplash.com/photo-1680992046626-418f7e910589",
+      "description": "Server rack lights. Use in the 'Email Capture / Steal Our Systems' section as a low-opacity background texture.",
+      "category": "background"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Install 'framer-motion' for animations.",
+    "Install Google Fonts 'Unbounded' and 'JetBrains Mono' and configure them in tailwind.config.js.",
+    "Build the hero section with a dark overlay over the 'hero_background' image to ensure H1 legibility.",
+    "Ensure the primary CTA ('Book a Strategy Call') is the vibrant Teal Green #00D4AA, with high-contrast dark text inside.",
+    "Construct the 'Problem Punch' section using a staggered grid layout.",
+    "Implement the 'Steal Our Systems' email capture using a minimalist terminal-style form.",
+    "Add 'data-testid' to all buttons, form inputs, and navigation links.",
+    "Store the email capture submissions by simulating a MongoDB API call or properly wiring it up to the backend."
+  ]
+}

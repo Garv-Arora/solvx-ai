@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --sx-bg: #FFFFFF;
+  --sx-surface: #FFFFFF;
+  --sx-surface-hover: #F5F5F5;
+  --sx-dark: #FFFFFF;
+  --sx-dark-surface: #F8F8F8;
+  --sx-text: #1C1917;
+  --sx-text-secondary: #57534E;
+  --sx-text-muted: #A8A29E;
+  --sx-text-on-dark: #1C1917;
+  --sx-text-on-dark-secondary: rgba(28,25,23,0.55);
+  --sx-text-on-dark-muted: rgba(28,25,23,0.35);
+  --sx-accent: #C8814A;
+  --sx-accent-hover: #B8723D;
+  --sx-accent-soft: rgba(200,129,74,0.1);
+  --sx-border: rgba(28,25,23,0.08);
+  --sx-border-hover: rgba(28,25,23,0.15);
+  --sx-border-dark: rgba(28,25,23,0.07);
+  --sx-border-dark-hover: rgba(28,25,23,0.12);
+  --sx-nav-bg: rgba(255,255,255,0.92);
+  --sx-nav-border: rgba(28,25,23,0.1);
+  --sx-nav-text: rgba(28,25,23,0.5);
+  --sx-nav-text-hover: #1C1917;
+  --sx-nav-active-bg: #1C1917;
+  --sx-nav-active-text: #FFFFFF;
+  --sx-nav-logo: #1C1917;
+}
+
+.dark {
+  --sx-bg: #1C1917;
+  --sx-surface: #262320;
+  --sx-surface-hover: #302C28;
+  --sx-dark: #141210;
+  --sx-dark-surface: #1C1917;
+  --sx-text: #F5F0EB;
+  --sx-text-secondary: rgba(245,240,235,0.6);
+  --sx-text-muted: rgba(245,240,235,0.35);
+  --sx-text-on-dark: #F5F0EB;
+  --sx-text-on-dark-secondary: rgba(245,240,235,0.6);
+  --sx-text-on-dark-muted: rgba(245,240,235,0.35);
+  --sx-accent: #C8814A;
+  --sx-accent-hover: #D8915A;
+  --sx-accent-soft: rgba(200,129,74,0.12);
+  --sx-border: rgba(245,240,235,0.1);
+  --sx-border-hover: rgba(245,240,235,0.2);
+  --sx-border-dark: rgba(245,240,235,0.1);
+  --sx-border-dark-hover: rgba(245,240,235,0.2);
+  --sx-nav-bg: rgba(20,18,16,0.9);
+  --sx-nav-border: rgba(245,240,235,0.15);
+  --sx-nav-text: rgba(245,240,235,0.5);
+  --sx-nav-text-hover: #F5F0EB;
+  --sx-nav-active-bg: #F5F0EB;
+  --sx-nav-active-text: #1C1917;
+  --sx-nav-logo: #F5F0EB;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--sx-bg);
+  color: var(--sx-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: rgba(200, 129, 74, 0.25);
+  color: inherit;
+}
+
+/* Grid pattern for dark sections */
+.grid-pattern {
+  background-image:
+    linear-gradient(var(--sx-border-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--sx-border-dark) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 24 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+    --primary: 28 48% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 24 10% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 24 5% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 24 10% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 28 48% 54%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 24 10% 10%;
+    --foreground: 30 30% 95%;
+    --card: 24 8% 14%;
+    --card-foreground: 30 30% 95%;
+    --popover: 24 10% 10%;
+    --popover-foreground: 30 30% 95%;
+    --primary: 28 48% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 8% 16%;
+    --secondary-foreground: 30 30% 95%;
+    --muted: 24 8% 16%;
+    --muted-foreground: 30 15% 55%;
+    --accent: 24 8% 16%;
+    --accent-foreground: 30 30% 95%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 24 8% 18%;
+    --input: 24 8% 18%;
+    --ring: 28 48% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+  }
+}
+
+@layer base {
+  [data-debug-wrapper="true"] {
+    display: contents !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
